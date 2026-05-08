@@ -23,7 +23,7 @@ for ticker in tickers:
         print(f"Processing {ticker}...")
 
         # Download data
-        df = yf.download(ticker, start="2025-01-01", end="2026-04-30", auto_adjust=False)
+        df = yf.download(ticker, start="2025-01-01", end="2026-05-09", auto_adjust=False)
 
         # Skip if empty
         if df.empty:
