@@ -3,6 +3,7 @@ import yfinance as yf
 import pandas as pd
 from dotenv import load_dotenv
 import os
+from datetime import datetime
 
 load_dotenv()
 
@@ -23,7 +24,7 @@ for ticker in tickers:
         print(f"Processing {ticker}...")
 
         # Download data
-        df = yf.download(ticker, start="2025-01-01", end="2026-05-09", auto_adjust=False)
+        df = yf.download(ticker, start="2025-01-01", end=(date.today()).isoformat(), auto_adjust=False)
 
         # Skip if empty
         if df.empty:
